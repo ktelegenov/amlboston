@@ -10,14 +10,17 @@ header .name{font-weight:600;text-decoration:none;letter-spacing:.01em;display:f
 nav{display:flex;gap:20px;font-size:15px}
 nav a{text-decoration:none;color:#777}
 nav a:hover,nav a[aria-current]{color:#111}
-main{flex:1;padding:48px 0 64px}
+main{flex:1;padding:0 0 64px}
+.strip{width:100vw;margin-left:calc(50% - 50vw);height:120px;margin-bottom:48px;background:#f2f2f2 url(img/banner.jpg) center 40%/cover no-repeat}
 h1{font-size:28px;font-weight:600;line-height:1.25;margin:0 0 8px;letter-spacing:-.01em}
 h2{font-size:17px;font-weight:600;margin:36px 0 6px}
 p{margin:0 0 14px;color:#333}
 .muted{color:#777}
 .small{font-size:14px}
 body{overflow-x:hidden}
-main.home{padding:0;display:flex;flex-direction:column}
+.list{list-style:none;padding:0;margin:20px 0 24px;border-top:1px solid #eee}
+.list li{padding:12px 0;border-bottom:1px solid #eee;color:#333}
+.home{padding:0;display:flex;flex-direction:column}
 .hero{position:relative;flex:1;width:100vw;margin-left:calc(50% - 50vw);min-height:68vh;display:flex;align-items:center;background:#f2f2f2 url(img/banner.jpg) center/cover no-repeat}
 .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.6) 0%,rgba(255,255,255,.3) 45%,rgba(255,255,255,0) 75%)}
 .hero-in{position:relative;width:100%;max-width:640px;margin:0 auto;padding:0 24px}
