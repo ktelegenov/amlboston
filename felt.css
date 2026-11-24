@@ -1,0 +1,209 @@
+/* Felt and ram's horn: page CSS for what sits inside the visuals (the kit has no felt fields, phones or covers).
+   Felt red #b3261e, indigo #1c2150, ochre #e0a526 and undyed wool #e9e5dd; a stitched line inside each felt
+   field, the ram's horn (qoshqar müiz) cut from ochre felt. */
+:root { --felt-red: #b3261e; --felt-indigo: #1c2150; --felt-ochre: #e0a526; --felt-wool: #e9e5dd; --felt-blue: #2d6c8f; }
+
+::selection { background: var(--felt-ochre); color: var(--felt-indigo); }
+html { scrollbar-color: color-mix(in oklab, var(--felt-indigo) 45%, var(--felt-wool)) var(--felt-wool); accent-color: var(--felt-red); }
+
+/* a felt field: flat colour, one stitched line 12px inside its edge */
+.felt-red, .phone-stage, .cover { position: relative; isolation: isolate; }
+.felt-red { background: var(--felt-red); }
+.felt-red::after, .phone-stage::after, .cover::after {
+  content: ""; position: absolute; inset: 12px; border-radius: calc(var(--r-lg) - 8px);
+  border: 2px dashed rgb(255 241 214 / .5); pointer-events: none; z-index: 3;
+}
+
+.felt-horn { position: absolute; z-index: 0; width: 132px; height: 85px; color: var(--felt-ochre); }
+.felt-horn--tl { left: 36px; bottom: 40px; }
+.felt-horn--br { right: 36px; top: 36px; transform: rotate(180deg); }
+
+/* the phone: an indigo body, a white screen, the lesson in the display face */
+.phone { --ph-w: 300px; background: var(--felt-indigo); border-radius: 44px; padding: 12px; box-shadow: 0 24px 48px -16px rgb(20 16 40 / .45); }
+.hero__art > .phone.ly-piece--main { width: var(--ph-w); left: calc(50% - var(--ph-w) / 2); top: var(--s-8); bottom: calc(-1 * var(--s-8)); z-index: 1; }
+.phone__screen { background: #fbfaf7; color: var(--felt-indigo); border-radius: 34px; height: 100%; padding: 28px 20px 20px; display: flex; flex-direction: column; gap: 18px; overflow: hidden; font-size: 14px; }
+.phone__top { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 13px; font-weight: 500; color: var(--muted); }
+.phone__prog { flex: 0 0 72px; height: 6px; border-radius: 3px; background: var(--felt-wool); overflow: hidden; }
+.phone__prog i { display: block; height: 100%; background: var(--felt-red); }
+.phone__ask { margin: 0; font-size: 15px; color: var(--muted); }
+.phone__ask b { color: var(--felt-indigo); font-weight: 500; }
+.phone__word { display: grid; gap: 4px; padding: 22px 18px; border-radius: 20px; background: var(--felt-wool); }
+.phone__word--mid { margin-top: 24px; text-align: center; }
+.phone__kz { font: var(--display-weight) 40px/1.05 var(--font-display); letter-spacing: -0.03em; }
+.phone__en { font-size: 15px; color: var(--muted); }
+.phone__play { align-self: center; display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px 10px 12px; border-radius: 999px; background: var(--felt-red); color: #fff; font-size: 14px; font-weight: 500; }
+.phone__play svg { width: 20px; height: 20px; }
+.phone__opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.phone__opts span { padding: 10px 14px; border-radius: 12px; border: 1.5px solid color-mix(in oklab, var(--felt-indigo) 18%, transparent); font-size: 15px; font-weight: 500; }
+.phone__opts .is-right { background: var(--felt-indigo); border-color: var(--felt-indigo); color: #fff; }
+.phone__opts--col { flex-direction: column; }
+.phone__opts--col span { padding: 14px 16px; }
+.phone__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.phone__list li { display: grid; grid-template-columns: 28px 1fr auto; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 14px; background: var(--felt-wool); font-size: 14px; font-weight: 500; }
+.phone__list b { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #fff; font-size: 13px; }
+.phone__list small { font-size: 13px; color: var(--muted); font-weight: 400; }
+.phone__list .is-done b { background: var(--felt-ochre); }
+.phone__list .is-on { background: var(--felt-indigo); color: #fff; }
+.phone__list .is-on small { color: #d9dbea; }
+.phone__wave { display: flex; align-items: center; justify-content: center; gap: 5px; height: 48px; margin-top: auto; }
+.phone__wave i { width: 5px; border-radius: 3px; background: var(--felt-red); height: 30%; }
+.phone__wave i:nth-child(3n) { height: 80%; } .phone__wave i:nth-child(4n+1) { height: 55%; } .phone__wave i:nth-child(5n+2) { height: 100%; }
+
+/* the small result card over the frame's lower left */
+.hero__art > .felt-card { left: var(--s-6); bottom: var(--s-8); width: 260px; z-index: 2; background: #fbfaf7; color: var(--felt-indigo); border-radius: var(--r-md); padding: 18px 20px; box-shadow: 0 16px 32px -12px rgb(20 16 40 / .4); display: grid; gap: 10px; }
+.felt-card p { margin: 0; font-size: 14px; display: flex; align-items: center; gap: 10px; }
+.felt-card__head { justify-content: space-between; font-weight: 500; font-size: 15px !important; }
+.felt-card__head span { font-weight: 400; color: var(--muted); font-size: 13px; }
+.felt-card__line i { display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--felt-ochre); font-style: normal; font-size: 11px; color: var(--felt-indigo); }
+.felt-card__line b { font-weight: 500; }
+
+/* #dala: three phones, each rising from its own felt field, cut by the field's foot */
+.phones { --p-h: 400px; align-items: start; }
+.phone-col { display: grid; gap: var(--s-3); align-content: start; }
+.phone-col h3 { margin-top: var(--s-3); }
+.phone-col p { margin: 0; max-width: 34ch; }
+.phone-stage { height: var(--p-h); border-radius: var(--r-lg); overflow: hidden; }
+.phone-stage--red { background: var(--felt-red); }
+.phone-stage--ochre { background: var(--felt-ochre); }
+.phone-stage--blue { background: var(--felt-blue); }
+.phone-stage::after { border-color: rgb(255 241 214 / .55); }
+.phone-stage .phone { position: absolute; left: 50%; top: 40px; width: 250px; height: calc(var(--p-h) + 40px); transform: translateX(-50%); padding: 10px; border-radius: 38px; }
+.phone-stage .phone__screen { border-radius: 30px; padding: 24px 16px 16px; gap: 14px; }
+.phone-stage .phone__kz { font-size: 32px; }
+.phone-stage--ochre::after { border-color: rgb(28 33 80 / .35); }
+
+/* #latin: the statement's heading set small above it */
+.latin__h { font-size: var(--t-h3); margin-bottom: var(--s-6); }
+
+/* #books: the indigo felt band, the cover on an ochre field */
+.felt-indigo { background: var(--felt-indigo); }
+.books { align-items: stretch; height: 100%; }
+.books__text { display: grid; align-content: start; gap: var(--s-5); }
+.books__text h2 { margin: 0; }
+.books__text .t-lead { margin: 0; }
+.books__facts { margin: 0; display: grid; gap: 0; border-top: 1px solid rgb(233 229 221 / .2); }
+.books__facts > div { display: flex; justify-content: space-between; gap: var(--s-4); padding: 12px 0; border-bottom: 1px solid rgb(233 229 221 / .2); }
+.books__facts dt { color: var(--p-inv-muted); }
+.books__facts dd { margin: 0; text-align: right; }
+.cover { display: grid; place-items: center; border-radius: var(--r-lg); background: var(--felt-ochre); min-height: 520px; overflow: hidden; }
+.cover::after { border-color: rgb(28 33 80 / .35); }
+.cover__book {
+  width: min(300px, 70%); aspect-ratio: 3 / 4; border-radius: 4px 10px 10px 4px; background: var(--felt-red);
+  color: #fbf3e4; display: grid; justify-items: center; align-content: center; gap: 10px; padding: 28px 24px; text-align: center;
+  box-shadow: inset 10px 0 0 rgb(0 0 0 / .16), 0 24px 40px -16px rgb(28 33 80 / .55);
+  transition: transform var(--dur, .3s) var(--ease, ease);
+}
+.cover__horn { width: 104px; height: 67px; color: var(--felt-ochre); }
+.cover__horn--foot { transform: rotate(180deg); }
+.cover__title { font: var(--display-weight) 48px/1 var(--font-display); letter-spacing: -0.035em; }
+.cover__sub { font-size: 16px; }
+.cover__imprint { font-size: 13px; opacity: .85; margin-top: 6px; }
+@media (hover: hover) { .cover:hover .cover__book { transform: translateY(-4px) rotate(-1deg); } }
+
+/* #supply: two 4:3 photographs on span-6, tops level */
+.supply__pair { align-items: stretch; }
+.supply__pic { display: block; overflow: hidden; border-radius: var(--r-lg); }
+.supply__pic .frame__img { width: 100%; height: 100%; object-fit: cover; }
+
+@media (max-width: 1023px) {
+  .phones { --p-h: 320px; }
+  .books { height: auto; }
+  .cover { min-height: 420px; }
+}
+@media (max-width: 639px) {
+  .phone { --ph-w: 240px; }
+  .felt-horn { width: 96px; height: 62px; }
+  .phones { --p-h: 260px; }
+  .cover { min-height: 340px; }
+  .cover__title { font-size: 40px; }
+}
+@media (prefers-reduced-motion: reduce) { .cover__book { transition: none; } }
+
+/* fixes after the first look */
+.felt-horn { width: 112px; height: 72px; }
+.felt-horn--tl { left: 40px; top: 44px; bottom: auto; }
+.felt-horn--br { right: 40px; bottom: 44px; top: auto; }
+#supply .section-head--split { margin-bottom: var(--s-7); }
+#supply .section-head--split .t-lead { max-width: 62ch; }
+
+/* #latin: the letters English lacks, cut from felt */
+.letters { list-style: none; margin: var(--s-8) 0 0; padding: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: var(--s-5); }
+.letters li {
+  position: relative; display: grid; place-items: center; aspect-ratio: 1; border-radius: var(--r-lg);
+  font: var(--display-weight) clamp(48px, 5vw, 88px)/1 var(--font-display); letter-spacing: -0.02em; color: #fbf3e4;
+  background: var(--felt-red);
+}
+.letters li:nth-child(4n+2) { background: var(--felt-indigo); }
+.letters li:nth-child(4n+3) { background: var(--felt-ochre); color: var(--felt-indigo); }
+.letters li:nth-child(4n+4) { background: var(--felt-blue); }
+.letters li::after { content: ""; position: absolute; inset: 8px; border-radius: calc(var(--r-lg) - 6px); border: 2px dashed rgb(255 241 214 / .45); }
+.letters li:nth-child(4n+3)::after { border-color: rgb(28 33 80 / .3); }
+
+@media (min-width: 640px) and (max-width: 1023px) { #dala { --h: 2; } }
+@media (max-width: 639px) {
+  .hero__proof { display: none; }
+  .felt-horn { display: none; }
+  .letters { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-3); }
+  .letters li { font-size: 40px; }
+}
+
+/* the phone is one box: its indigo body is the screen's border */
+.phone { background: none; padding: 0; box-shadow: none; border-radius: 0; }
+.phone__screen { border: 12px solid var(--felt-indigo); border-radius: 44px; box-shadow: 0 24px 48px -16px rgb(20 16 40 / .45); }
+.phone-stage .phone { padding: 0; }
+.phone-stage .phone__screen { border-width: 10px; border-radius: 38px; }
+.phone__list .is-on b { color: var(--felt-indigo); }
+.hero__art > .loop-pause { z-index: 4; }
+.felt-horn--br { transform: none; }
+
+/* the set cover's title stays under heading size */
+.cover__title { font-size: 36px; }
+.books__facts { border-top: 0; }
+
+/* #supply: the head, then the pair */
+.supply__head { margin-bottom: var(--s-7); max-width: none; }
+.supply__head > div { display: grid; gap: var(--s-4); max-width: 760px; }
+.supply__head p { margin: 0; }
+
+.letters { display: grid; }
+.letters > span {
+  position: relative; display: grid; place-items: center; aspect-ratio: 1; border-radius: var(--r-lg);
+  font: var(--display-weight) clamp(40px, 4.4vw, 76px)/1 var(--font-display); letter-spacing: -0.02em; color: #fbf3e4;
+  background: var(--felt-red);
+}
+.letters > span:nth-child(4n+2) { background: var(--felt-indigo); }
+.letters > span:nth-child(4n+3) { background: var(--felt-ochre); color: var(--felt-indigo); }
+.letters > span:nth-child(4n+4) { background: var(--felt-blue); }
+.letters > span::after { content: ""; position: absolute; inset: 8px; border-radius: calc(var(--r-lg) - 6px); border: 2px dashed rgb(255 241 214 / .45); }
+.letters > span:nth-child(4n+3)::after { border-color: rgb(28 33 80 / .3); }
+
+@media (min-width: 640px) and (max-width: 1023px) { .phones { --p-h: 380px; } }
+@media (max-width: 639px) { .letters > span { font-size: 36px; } }
+
+.hero__art .loop-pause:focus-visible { outline-color: #fbf3e4; }
+.supply__head .link { justify-self: start; }
+@media (max-width: 639px) {
+  #books .books__facts { display: none; }
+  .cover { min-height: 280px; }
+  .cover__book { width: 160px; padding: 16px; gap: 6px; }
+  .cover__horn { width: 64px; height: 41px; }
+  .cover__title { font-size: 28px; }
+  .supply__pair > .supply__pic:nth-child(2) { display: none; }
+}
+@media (max-width: 359px) { .phones { --p-h: 200px; } .phone-col p { display: none; } }
+
+/* #work: three linked cards, one panel height */
+.work { --p-h: 420px; align-items: start; }
+.work-card { display: grid; gap: var(--s-3); align-content: start; color: inherit; text-decoration: none; }
+.work-card > .panel { height: var(--p-h); min-height: 0; border-radius: var(--r-lg); overflow: hidden; position: relative; }
+.work-card > .frame--photo .frame__img { width: 100%; height: 100%; object-fit: cover; }
+.work-card h3 { margin-top: var(--s-3); }
+.work-card p { margin: 0; max-width: 36ch; }
+.work-card .cover__book { width: min(220px, 62%); }
+.work-card .cover__title { font-size: 34px; }
+.work-card .cover__horn { width: 80px; height: 51px; }
+@media (min-width: 640px) and (max-width: 1023px) { .work { --p-h: 560px; } }
+@media (max-width: 639px) { .work { --p-h: 240px; } .work-card .cover__book { width: 140px; } }
+@media (min-width: 1024px) and (max-height: 820px) { .work { --p-h: 300px; } }
+.work { align-items: stretch; }
+#studio .latin__h { margin-bottom: var(--s-4); }
