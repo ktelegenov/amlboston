@@ -16,10 +16,13 @@ h2{font-size:17px;font-weight:600;margin:36px 0 6px}
 p{margin:0 0 14px;color:#333}
 .muted{color:#777}
 .small{font-size:14px}
-.home{display:flex;flex-direction:column;justify-content:center}
-.banner{display:block;width:100%;height:auto;border-radius:14px;margin:0 0 40px;background:#f4f4f4}
-.home h1{font-size:clamp(32px,6vw,44px);margin-bottom:10px}
-.home p{font-size:18px;color:#777}
+body{overflow-x:hidden}
+main.home{padding:0;display:flex;flex-direction:column}
+.hero{position:relative;flex:1;width:100vw;margin-left:calc(50% - 50vw);min-height:68vh;display:flex;align-items:center;background:#f2f2f2 url(img/banner.jpg) center/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.6) 0%,rgba(255,255,255,.3) 45%,rgba(255,255,255,0) 75%)}
+.hero-in{position:relative;width:100%;max-width:640px;margin:0 auto;padding:0 24px}
+.hero h1{font-size:clamp(36px,6vw,56px);margin:0 0 12px;letter-spacing:-.02em}
+.hero p{font-size:clamp(17px,2vw,20px);color:#444;margin:0}
 footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:28px 0 36px;border-top:1px solid #eee;font-size:13px;color:#999}
 footer nav{gap:16px;font-size:13px}
 footer nav a{color:#999}
