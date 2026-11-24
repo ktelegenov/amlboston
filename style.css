@@ -1,0 +1,23 @@
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:#111;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:underline;text-decoration-color:#ccc;text-underline-offset:3px}
+a:hover{text-decoration-color:#111}
+.wrap{max-width:640px;margin:0 auto;padding:0 24px;min-height:100vh;display:flex;flex-direction:column}
+header{display:flex;justify-content:space-between;align-items:baseline;padding:32px 0;gap:16px;flex-wrap:wrap}
+header .name{font-weight:600;text-decoration:none;letter-spacing:.01em}
+nav{display:flex;gap:20px;font-size:15px}
+nav a{text-decoration:none;color:#777}
+nav a:hover,nav a[aria-current]{color:#111}
+main{flex:1;padding:48px 0 64px}
+h1{font-size:28px;font-weight:600;line-height:1.25;margin:0 0 8px;letter-spacing:-.01em}
+h2{font-size:17px;font-weight:600;margin:36px 0 6px}
+p{margin:0 0 14px;color:#333}
+.muted{color:#777}
+.small{font-size:14px}
+.home{display:flex;flex-direction:column;justify-content:center}
+.home h1{font-size:clamp(32px,6vw,44px);margin-bottom:10px}
+.home p{font-size:18px;color:#777}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:28px 0 36px;border-top:1px solid #eee;font-size:13px;color:#999}
+footer nav{gap:16px;font-size:13px}
+footer nav a{color:#999}
