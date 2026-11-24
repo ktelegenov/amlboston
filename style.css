@@ -19,6 +19,10 @@ p{margin:0 0 14px;color:#333}
 .small{font-size:14px}
 body{overflow-x:hidden}
 .list{list-style:none;padding:0;margin:20px 0 24px;border-top:1px solid #eee}
+.row{display:flex;justify-content:space-between;align-items:center;gap:16px;text-decoration:none}
+.row:hover strong{text-decoration:underline;text-underline-offset:3px}
+.back{margin:-28px 0 12px}
+.arrow{color:#999;font-size:18px}
 .list li{padding:12px 0;border-bottom:1px solid #eee;color:#333}
 .home{padding:0;display:flex;flex-direction:column}
 .hero{position:relative;flex:1;width:100vw;margin-left:calc(50% - 50vw);min-height:68vh;display:flex;align-items:center;background:#f2f2f2 url(img/banner.jpg) center/cover no-repeat}
