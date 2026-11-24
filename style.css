@@ -6,7 +6,7 @@ a:hover{text-decoration-color:#111}
 .wrap{max-width:640px;margin:0 auto;padding:0 24px;min-height:100vh;display:flex;flex-direction:column}
 header{display:flex;justify-content:space-between;align-items:center;padding:32px 0;gap:16px;flex-wrap:wrap}
 header .name{font-weight:600;text-decoration:none;letter-spacing:.01em;display:flex;align-items:center;gap:9px}
-.mark{display:block;color:#111}
+.mark{display:block;width:auto}
 nav{display:flex;gap:20px;font-size:15px}
 nav a{text-decoration:none;color:#777}
 nav a:hover,nav a[aria-current]{color:#111}
