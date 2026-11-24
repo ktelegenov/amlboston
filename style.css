@@ -17,6 +17,7 @@ p{margin:0 0 14px;color:#333}
 .muted{color:#777}
 .small{font-size:14px}
 .home{display:flex;flex-direction:column;justify-content:center}
+.banner{display:block;width:100%;height:auto;border-radius:14px;margin:0 0 40px;background:#f4f4f4}
 .home h1{font-size:clamp(32px,6vw,44px);margin-bottom:10px}
 .home p{font-size:18px;color:#777}
 footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:28px 0 36px;border-top:1px solid #eee;font-size:13px;color:#999}
